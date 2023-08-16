@@ -12,22 +12,22 @@ namespace MongoDB
     {
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public string Titulo { get; set; }
+        public string Título { get; set; }
         public string Autor { get; set; }
         public int Ano { get; set; }
-        public int Paginas { get; set; }
+        public int Páginas { get; set; }
         public List<string> Assunto { get; set; }
     }
 
     public class valoresLivro
     {
-        public static Livro incluindoValoresLivro(string Titulo, string Autor, int Ano, int Paginas, string assuntos)
+        public static Livro incluindoValoresLivro(string titulo, string Autor, int Ano, int Paginas, string assuntos)
         {
             Livro Livro = new Livro();
-            Livro.Titulo = Titulo;
+            Livro.Título = titulo;
             Livro.Autor = Autor;
             Livro.Ano = Ano;
-            Livro.Paginas = Paginas;
+            Livro.Páginas = Paginas;
             string[] vetAssunto = assuntos.Split(',');
             List<string> vetAssunto2 = new List<string>();
             for (int i = 0; i < vetAssunto.Length - 1; i++)
@@ -37,5 +37,5 @@ namespace MongoDB
             Livro.Assunto = vetAssunto2;
             return Livro;
         }
-    }   
+    }
 }

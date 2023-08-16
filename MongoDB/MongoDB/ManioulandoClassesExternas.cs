@@ -18,10 +18,10 @@ namespace MongoDB
         static async Task MainSync(string[] args)
         {
             Livro livro = new Livro();
-            livro.Titulo = "Sob redonda";
+            livro.Título = "Sob redonda";
             livro.Autor = "Stepaahn King";
             livro.Ano = 2012;
-            livro.Paginas = 679;
+            livro.Páginas = 679;
 
             List<string> listaAssuntos = new List<string>();
             listaAssuntos.Add("Ficação Cientifica");
@@ -30,7 +30,7 @@ namespace MongoDB
             livro.Assunto = listaAssuntos;
 
             //acessando atraves da classe de conexão
-            var conexaoLivros = new ConnectionMongo();
+            var conexaoLivros = new DbContext();
 
             await conexaoLivros.Livros.InsertOneAsync(livro);
             Console.WriteLine("Documento incluido");

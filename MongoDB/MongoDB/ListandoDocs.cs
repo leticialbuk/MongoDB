@@ -19,16 +19,14 @@ namespace MongoDB
 
         static async Task MainSync(string[] args)
         {
-            var conexaoLivros = new ConnectionMongo();
-            Console.WriteLine("Listando documentos");
+                var conexaoLivros = new DbContext();
+                Console.WriteLine("Listando Livros");
 
-            var listaLivros = await conexaoLivros.Livros.Find(new BsonDocument()).ToListAsync();
-            foreach (var doc in listaLivros) 
-            {
-                Console.WriteLine(doc.ToJson<Livro>());
-            }
+                var listaLivros = await conexaoLivros.Livros.Find(new BsonDocument()).ToListAsync();
+                foreach (var doc in listaLivros)
+                    Console.WriteLine(doc.ToJson<Livro>());
 
-            Console.WriteLine("Fim da lista");
+                Console.WriteLine("Fim da lista");
         }
     }
 }

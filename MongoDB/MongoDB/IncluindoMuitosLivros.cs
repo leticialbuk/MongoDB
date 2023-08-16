@@ -18,7 +18,7 @@ namespace MongoDB
         static async Task MainSync(string[] args)
         {
             //acessando atraves da classe de conexão
-            var conexaoLivros = new ConnectionMongo();
+            var conexaoLivros = new DbContext();
 
             List<Livro> Livros = new List<Livro>();
             Livros.Add(valoresLivro.incluindoValoresLivro("A dança com dragões", "George Martin", 2011, 934, "Fantasia"));

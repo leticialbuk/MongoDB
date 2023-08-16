@@ -18,7 +18,7 @@ namespace MongoDB
         static async Task MainSync(string[] args)
         {
             //acessando atraves da classe de conexão
-            var conexaoLivros = new ConnectionMongo();
+            var conexaoLivros = new DbContext();
 
             Livro livro = new Livro();
             livro = valoresLivro.incluindoValoresLivro("Star Wars", "Timothy", 2010, 245, "Ficção cientifica, Ação");

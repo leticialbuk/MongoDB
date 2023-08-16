@@ -19,15 +19,6 @@ namespace MongoDB
 
         static async Task MainSync(string[] args)
         {
-            //"Título": "Guerra dos tronos",
-            //"Autor": "George Martin",
-            //"Ano": 1999,
-            //"Páginas": 856,
-            //"Assunto": [
-            //    "Fantasia",
-            //    "Ação"
-            //]
-
             var doc = new BsonDocument
             {
                 {"Título", "Guerra dos Tronos" }
